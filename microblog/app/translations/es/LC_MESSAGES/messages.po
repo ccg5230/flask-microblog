@@ -1,0 +1,259 @@
+# Spanish translations for PROJECT.
+# Copyright (C) 2019 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2019-03-27 22:35+0800\n"
+"PO-Revision-Date: 2019-03-27 22:28+0800\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: app/__init__.py:23
+msgid "login_manager.login_message = u\"请先登录。"
+msgstr ""
+
+#: app/translate.py:11
+msgid "Error: the translation service is not configured."
+msgstr ""
+
+#: app/translate.py:18
+msgid "Error: the translation service failed."
+msgstr ""
+
+#: app/auth/authemail.py:9
+msgid "[Microblog] Reset Your Password"
+msgstr ""
+
+#: app/auth/forms.py:13 app/main/forms.py:11
+msgid "Username"
+msgstr ""
+
+#: app/auth/routes.py:22
+msgid "Invalid username or password"
+msgstr ""
+
+#: app/auth/routes.py:29
+msgid "Sign In"
+msgstr ""
+
+#: app/auth/routes.py:48
+msgid "Congratulations, you are now a registered user!"
+msgstr ""
+
+#: app/auth/routes.py:50
+msgid "Register"
+msgstr ""
+
+#: app/auth/routes.py:64
+msgid "Check your email for the instructions to reset your password"
+msgstr ""
+
+#: app/auth/routes.py:67
+msgid "Reset Password"
+msgstr ""
+
+#: app/auth/routes.py:81
+msgid "Your password has been reset."
+msgstr ""
+
+#: app/main/forms.py:12
+msgid "About me"
+msgstr ""
+
+#: app/main/forms.py:14 app/main/forms.py:29 app/main/forms.py:44
+msgid "Submit"
+msgstr ""
+
+#: app/main/forms.py:24
+msgid "Please use a different username."
+msgstr ""
+
+#: app/main/forms.py:28
+msgid "Say something"
+msgstr ""
+
+#: app/main/forms.py:32 app/main/routes.py:156
+msgid "Search"
+msgstr ""
+
+#: app/main/forms.py:42
+msgid "Message"
+msgstr ""
+
+#: app/main/routes.py:43
+msgid "Your post is now live!"
+msgstr ""
+
+#: app/main/routes.py:52 app/templates/base.html:23
+msgid "Home"
+msgstr ""
+
+#: app/main/routes.py:67 app/templates/base.html:24
+msgid "Explore"
+msgstr ""
+
+#: app/main/routes.py:95
+msgid "Your changes have been saved."
+msgstr ""
+
+#: app/main/routes.py:100 app/templates/edit_profile.html:6
+msgid "Edit Profile"
+msgstr ""
+
+#: app/main/routes.py:109 app/main/routes.py:125
+#, python-format
+msgid "User %(username)s not found."
+msgstr ""
+
+#: app/main/routes.py:112
+msgid "You cannot follow yourself!"
+msgstr ""
+
+#: app/main/routes.py:116
+#, python-format
+msgid "You are following %(username)s!"
+msgstr ""
+
+#: app/main/routes.py:128
+msgid "You cannot unfollow yourself!"
+msgstr ""
+
+#: app/main/routes.py:132
+#, python-format
+msgid "You are not following %(username)s."
+msgstr ""
+
+#: app/main/routes.py:176
+msgid "Your message has been sent."
+msgstr ""
+
+#: app/main/routes.py:178
+msgid "Send Message"
+msgstr ""
+
+#: app/main/routes.py:214
+msgid "An export task is currently in progress"
+msgstr ""
+
+#: app/main/routes.py:216
+msgid "Exporting posts..."
+msgstr ""
+
+#: app/templates/_post.html:18
+#, python-format
+msgid "%(username)s said %(when)s"
+msgstr ""
+
+#: app/templates/_post.html:29
+msgid "Translate"
+msgstr ""
+
+#: app/templates/base.html:6
+msgid "Welcome to Microblog"
+msgstr ""
+
+#: app/templates/base.html:35
+msgid "Login"
+msgstr ""
+
+#: app/templates/base.html:38 app/templates/messages.html:5
+msgid "Messages"
+msgstr ""
+
+#: app/templates/base.html:47
+msgid "Profile"
+msgstr ""
+
+#: app/templates/base.html:48
+msgid "Logout"
+msgstr ""
+
+#: app/templates/base.html:98
+msgid "Error: Could not contact server."
+msgstr ""
+
+#: app/templates/messages.html:13
+msgid "Newer messages"
+msgstr ""
+
+#: app/templates/messages.html:18
+msgid "Older messages"
+msgstr ""
+
+#: app/templates/search.html:5
+msgid "Search Results"
+msgstr ""
+
+#: app/templates/search.html:14
+msgid "Previous results"
+msgstr ""
+
+#: app/templates/search.html:19
+msgid "Next results"
+msgstr ""
+
+#: app/templates/send_message.html:6
+#, python-format
+msgid "Send Message to %(recipient)s"
+msgstr ""
+
+#: app/templates/user.html:9
+msgid "User"
+msgstr ""
+
+#: app/templates/user.html:12 app/templates/user_popup.html:14
+msgid "Last seen on"
+msgstr ""
+
+#: app/templates/user.html:14 app/templates/user_popup.html:17
+#, python-format
+msgid "%(count)d followers"
+msgstr ""
+
+#: app/templates/user.html:14 app/templates/user_popup.html:18
+#, python-format
+msgid "%(count)d following"
+msgstr ""
+
+#: app/templates/user.html:16
+msgid "Edit your profile"
+msgstr ""
+
+#: app/templates/user.html:18
+msgid "Export your posts"
+msgstr ""
+
+#: app/templates/user.html:21 app/templates/user_popup.html:22
+msgid "Follow"
+msgstr ""
+
+#: app/templates/user.html:23 app/templates/user_popup.html:26
+msgid "Unfollow"
+msgstr ""
+
+#: app/templates/user.html:27
+msgid "Send private message"
+msgstr ""
+
+#: app/templates/user.html:40
+msgid "Newer posts"
+msgstr ""
+
+#: app/templates/user.html:45
+msgid "Older posts"
+msgstr ""
+
+#: app/templates/errors/404.html:6
+msgid "File Not Found"
+msgstr ""
+

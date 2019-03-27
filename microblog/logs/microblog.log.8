@@ -1,0 +1,116 @@
+2019-03-26 23:49:49,977 ERROR: Exception on /search [GET] [in /var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/urllib3/connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/urllib3/util/connection.py", line 80, in create_connection
+    raise err
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/urllib3/util/connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/elasticsearch/connection/http_urllib3.py", line 172, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=Retry(False), headers=request_headers, **kw)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/urllib3/util/retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/local/python3/lib/python3.7/http/client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/local/python3/lib/python3.7/http/client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/local/python3/lib/python3.7/http/client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/python3/lib/python3.7/http/client.py", line 1016, in _send_output
+    self.send(msg)
+  File "/usr/local/python3/lib/python3.7/http/client.py", line 956, in send
+    self.connect()
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/urllib3/connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/urllib3/connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f17291e3a90>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/main/routes.py", line 149, in search
+    current_app.config['POSTS_PER_PAGE'])
+  File "./app/models.py", line 90, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "./app/search.py", line 24, in query_index
+    'from': (page - 1) * per_page, 'size': per_page})
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/elasticsearch/client/__init__.py", line 660, in search
+    doc_type, '_search'), params=params, body=body)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/elasticsearch/transport.py", line 318, in perform_request
+    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/elasticsearch/connection/http_urllib3.py", line 181, in perform_request
+    raise ConnectionError('N/A', str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x7f17291e3a90>: Failed to establish a new connection: [Errno 111] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x7f17291e3a90>: Failed to establish a new connection: [Errno 111] Connection refused)
+2019-03-27 13:23:30,456 INFO: Microblog startup [in ./app/__init__.py:79]
+2019-03-27 13:24:09,527 ERROR: Exception on /search [GET] [in /var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/main/routes.py", line 149, in search
+    current_app.config['POSTS_PER_PAGE'])
+  File "./app/models.py", line 90, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "./app/search.py", line 24, in query_index
+    'from': (page - 1) * per_page, 'size': per_page})
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/elasticsearch/client/__init__.py", line 660, in search
+    doc_type, '_search'), params=params, body=body)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/elasticsearch/transport.py", line 318, in perform_request
+    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/elasticsearch/connection/http_urllib3.py", line 186, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/elasticsearch/connection/base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index')
+2019-03-27 13:29:16,729 INFO: Microblog startup [in /var/tmp/python3web-project-code/microblog/app/__init__.py:79]
+2019-03-27 16:32:35,576 INFO: Microblog startup [in ./app/__init__.py:79]
+2019-03-27 16:52:07,704 INFO: Microblog startup [in /var/tmp/python3web-project-code/microblog/app/__init__.py:79]
+2019-03-27 16:52:10,948 INFO: Microblog startup [in /var/tmp/python3web-project-code/microblog/app/__init__.py:79]
+2019-03-27 17:09:24,193 INFO: Microblog startup [in /var/tmp/python3web-project-code/microblog/app/__init__.py:79]
+2019-03-27 17:09:38,570 INFO: Microblog startup [in /var/tmp/python3web-project-code/microblog/app/__init__.py:79]
+2019-03-27 17:19:16,904 INFO: Microblog startup [in /var/tmp/python3web-project-code/microblog/app/__init__.py:79]
+2019-03-27 17:19:24,803 INFO: Microblog startup [in /var/tmp/python3web-project-code/microblog/app/__init__.py:79]
+2019-03-27 17:27:31,727 INFO: Microblog startup [in ./app/__init__.py:79]

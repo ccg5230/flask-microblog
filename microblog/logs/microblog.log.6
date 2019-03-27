@@ -1,0 +1,86 @@
+2019-03-27 17:27:39,234 ERROR: Exception on /auth/login [GET] [in /var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./app/auth/routes.py", line 29, in login
+    return render_template('auth/login.html', title=_('Sign In'), form=form)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/var/tmp/python3web-project-code/microblog/app/templates/auth/login.html", line 4, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/var/tmp/python3web-project-code/microblog/app/templates/base.html", line 3, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
+    {% block navbar %}
+  File "/var/tmp/python3web-project-code/microblog/app/templates/base.html", line 43, in block "navbar"
+    {% set new_messages = current_user.new_messages() %}
+jinja2.exceptions.UndefinedError: 'flask_login.mixins.AnonymousUserMixin object' has no attribute 'new_messages'
+2019-03-27 17:27:45,172 ERROR: Exception on /auth/login [GET] [in /var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./app/auth/routes.py", line 29, in login
+    return render_template('auth/login.html', title=_('Sign In'), form=form)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/var/tmp/python3web-project-code/microblog/app/templates/auth/login.html", line 4, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/var/tmp/python3web-project-code/microblog/app/templates/base.html", line 3, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
+    {% block navbar %}
+  File "/var/tmp/python3web-project-code/microblog/app/templates/base.html", line 43, in block "navbar"
+    {% set new_messages = current_user.new_messages() %}
+jinja2.exceptions.UndefinedError: 'flask_login.mixins.AnonymousUserMixin object' has no attribute 'new_messages'

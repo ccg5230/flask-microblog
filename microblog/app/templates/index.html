@@ -1,0 +1,32 @@
+
+
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <h1>Hi, {{ current_user.username }}!</h1>
+    {% if form %}
+    {{ wtf.quick_form(form) }}
+    <br>
+    {% endif %}
+    {% for post in posts %}
+        {% include '_post.html' %}
+    {% endfor %}
+    <div class="form-inline">
+    <nav aria-label="...">
+        <ul class="pagination">
+            <li class="previous{% if not prev_url %} disabled{% endif %}">
+                <a href="{{ prev_url or '#' }}">
+                    <span aria-hidden="true">&larr;</span> 上一页
+                </a>
+            </li>
+            <li class="next{% if not next_url %} disabled{% endif %}">
+                <a href="{{ next_url or '#' }}">
+                    下一页<span aria-hidden="true">&rarr;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div>{% if num%}共<span class="pagination-info">{{ num }}</span>条{% endif %}</div>
+    </div>
+{% endblock %}

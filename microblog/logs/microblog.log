@@ -1,0 +1,103 @@
+2019-03-27 19:43:57,872 ERROR: Exception on /export_posts [GET] [in /var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/redis/connection.py", line 492, in connect
+    sock = self._connect()
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/redis/connection.py", line 550, in _connect
+    raise err
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/redis/connection.py", line 538, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/main/routes.py", line 216, in export_posts
+    current_user.launch_task('export_posts', _('Exporting posts...'))
+  File "./app/models.py", line 54, in launch_task
+    *args, **kwargs)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/rq/queue.py", line 316, in enqueue
+    job_id=job_id, at_front=at_front, meta=meta)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/rq/queue.py", line 263, in enqueue_call
+    job = self.enqueue_job(job, at_front=at_front)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/rq/queue.py", line 341, in enqueue_job
+    pipe.execute()
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/redis/client.py", line 3514, in execute
+    self.shard_hint)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/redis/connection.py", line 994, in get_connection
+    connection.connect()
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/redis/connection.py", line 497, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to None:6379. Connection refused.
+2019-03-27 21:23:11,670 INFO: Microblog startup [in ./app/__init__.py:82]
+2019-03-27 21:24:15,056 INFO: Microblog startup [in ./app/__init__.py:82]
+2019-03-27 21:26:32,498 INFO: Microblog startup [in ./app/__init__.py:82]
+2019-03-27 21:40:45,231 INFO: Microblog startup [in /var/tmp/python3web-project-code/microblog/app/__init__.py:85]
+2019-03-27 21:40:52,279 INFO: Microblog startup [in /var/tmp/python3web-project-code/microblog/app/__init__.py:85]
+2019-03-27 21:44:30,826 INFO: Microblog startup [in ./app/__init__.py:85]
+2019-03-27 22:07:07,814 ERROR: Exception on /export_posts [GET] [in /var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/redis/connection.py", line 492, in connect
+    sock = self._connect()
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/redis/connection.py", line 550, in _connect
+    raise err
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/redis/connection.py", line 538, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "./app/main/routes.py", line 216, in export_posts
+    current_user.launch_task('export_posts', _('Exporting posts...'))
+  File "./app/models.py", line 129, in launch_task
+    *args, **kwargs)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/rq/queue.py", line 316, in enqueue
+    job_id=job_id, at_front=at_front, meta=meta)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/rq/queue.py", line 263, in enqueue_call
+    job = self.enqueue_job(job, at_front=at_front)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/rq/queue.py", line 341, in enqueue_job
+    pipe.execute()
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/redis/client.py", line 3514, in execute
+    self.shard_hint)
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/redis/connection.py", line 994, in get_connection
+    connection.connect()
+  File "/var/tmp/python3web-project-code/microblog/venv/lib/python3.7/site-packages/redis/connection.py", line 497, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to None:6379. Connection refused.
+2019-03-27 22:09:14,738 INFO: Microblog startup [in /var/tmp/python3web-project-code/microblog/app/__init__.py:85]
+2019-03-27 22:13:41,540 INFO: Microblog startup [in /var/tmp/python3web-project-code/microblog/app/__init__.py:85]
+2019-03-27 22:14:04,922 INFO: Microblog startup [in ./app/__init__.py:85]
+2019-03-27 22:15:04,422 INFO: Microblog startup [in ./app/__init__.py:85]
+2019-03-27 22:15:35,870 INFO: Microblog startup [in /var/tmp/python3web-project-code/microblog/app/__init__.py:85]
+2019-03-27 22:17:09,125 INFO: Microblog startup [in /var/tmp/python3web-project-code/microblog/app/__init__.py:85]
+2019-03-27 22:37:05,733 INFO: Microblog startup [in /var/tmp/python3web-project-code/microblog/app/__init__.py:85]
+2019-03-27 22:41:00,249 INFO: Microblog startup [in /var/tmp/python3web-project-code/microblog/app/__init__.py:85]
+2019-03-27 22:41:19,936 INFO: Microblog startup [in /var/tmp/python3web-project-code/microblog/app/__init__.py:85]
